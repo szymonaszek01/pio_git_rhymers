@@ -2,36 +2,55 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    public static final int SIZE = 12;
-    public static final int FALSE_VALUE = -1;
-    public static final int FULL_STACK_VALUE = 11;
-    private final int[] numbers = new int[SIZE];
-
-    public int total = FALSE_VALUE;
+    private static final int SIZE = 12;
+    private static final int FALSE_VALUE = -1;
+    private static final int FULL_STACK_VALUE = 11;
+    private final int[] numbers = new int[getSIZE()];
+    private int total = getFalseValue();
 
     public void countIn(int in) {
         if (!isFull())
-            numbers[++total] = in;
+            getNumbers()[++total] = in;
     }
 
-    public boolean callCheck() {
-        return total == FALSE_VALUE;
+    protected boolean callCheck() {
+        return total == getFalseValue();
     }
 
     public boolean isFull() {
-        return total == FULL_STACK_VALUE;
+        return total == getFullStackValue();
     }
 
     protected int peekaboo() {
         if (callCheck())
-            return FALSE_VALUE;
-        return numbers[total];
+            return getFalseValue();
+        return getNumbers()[total];
     }
 
     public int countOut() {
         if (callCheck())
-            return FALSE_VALUE;
-        return numbers[total--];
+            return getFalseValue();
+        return getNumbers()[total--];
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public int[] getNumbers() {
+        return numbers;
+    }
+
+    public static int getSIZE() {
+        return SIZE;
+    }
+
+    public static int getFalseValue() {
+        return FALSE_VALUE;
+    }
+
+    public static int getFullStackValue() {
+        return FULL_STACK_VALUE;
     }
 
 }
