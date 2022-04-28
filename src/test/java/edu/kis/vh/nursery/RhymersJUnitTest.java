@@ -103,3 +103,5 @@ public class RhymersJUnitTest {
     }
 
 }
+
+// TODO: Podział testów na poszczególne testujące klasy np. DefaultCountingOutRhymerJUnitTests, FIFORhymerJUnitTests, HanoiJUnitTests`
