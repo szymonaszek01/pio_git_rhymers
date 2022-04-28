@@ -33,3 +33,5 @@ class RhymersDemo {
     }
 
 }
+
+// 14. Projekt działa poprawnie!
